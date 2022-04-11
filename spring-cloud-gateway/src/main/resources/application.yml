@@ -1,0 +1,46 @@
+#server:
+#  port: 8080
+#spring:
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: neo_route
+#          uri: http://www.ityouknow.com
+#          predicates:
+##            - Path=/foo/{segment}
+#
+#            #            - Path=/spring-cloud
+#            - After=2022-04-11T14:31:06+08:00[Asia/Shanghai]
+#            #            - Cookie=ityouknow, kee.e
+#
+#            #            - Header=X-Request-Id, \d+
+##            - Host=**.ityouknow.com
+#            - Method=GET`
+##            - Query=smile
+#            - Query=keep, pu.
+server:
+  port: 8888
+spring:
+  application:
+    name: cloud-gateway-eureka
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: add_request_parameter_route
+          uri: lb://spring-cloud-producer
+          filters:
+            - StripPrefix=2
+            - AddRequestParameter=foo, bar
+          predicates:
+            - Method=GET
+            - Path=/name/**
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+logging:
+  level:
+    org.springframework.cloud.gateway: debug

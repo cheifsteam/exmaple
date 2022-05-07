@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.elasticsearchtry.mapper.EsPersonMapper">
+    <resultMap id="EsPersonResult" type="com.example.elasticsearchtry.domain.EsPerson">
+    </resultMap>
+    <select id="selectEsPersonList" resultMap="EsPersonResult">
+        select * from user
+        <where>
+        <if test="personId!= null">
+            person_id=#{#personId}
+        </if>
+        </where>
+    </select>
+    <select id="searchByMysql" resultMap="EsPersonResult" parameterType="String">
+        select * from user
+        where username like concat('%', #{keyword}, '%') or city like concat('%', #{keyword}, '%') or  country like concat('%',#{keyword},'%')
+
+    </select>
+</mapper>

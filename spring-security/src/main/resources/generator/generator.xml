@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <!--导入属性配置-->
+    <properties resource="application.properties"></properties>
+
+
+    <context id="DB2tables" targetRuntime="Mybatis3">
+
+        <!--覆盖生成XML文件-->
+        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/base?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC"
+                        userId="root" password="qwer123+456">
+            <!--           防止MyBatis Generator 生成器把其他数据库的同名表生成下来-->
+            <property name="nullCatalogMeansCurrent" value="true"/>
+        </jdbcConnection>
+        <!--类型转换-->
+        <javaTypeResolver>
+            <!--是否使用BigDecimals,false可自动转化以下类型（long,Interger short）-->
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!--生成实体类包-->
+        <javaModelGenerator targetPackage="com.example.springsecurity.domain" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--生成映射文件存放位置-->
+        <sqlMapGenerator targetPackage="mapping" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!--生成Dao类存放的位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.example.springsecurity.mapper" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!--        &lt;!&ndash;生成对应表及类名&ndash;&gt;-->
+        <!--        <table tableName="user" domainObjectName="User" enableCountByExample="false"-->
+        <!--               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"-->
+        <!--               selectByExampleQueryId="true">-->
+        <!--        </table>-->
+<!--        <table tableName="school" domainObjectName="School" enableCountByExample="false"-->
+<!--               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"-->
+<!--               selectByExampleQueryId="true">-->
+<!--        </table>-->
+        <!--        <table tableName="admin" domainObjectName="Admin" enableCountByExample="false"-->
+        <!--               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"-->
+        <!--               selectByExampleQueryId="true">-->
+        <!--        </table>-->
+        <!--        <table tableName="category" domainObjectName="Category" enableCountByExample="false"-->
+        <!--               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"-->
+        <!--               selectByExampleQueryId="true">-->
+        <!--        </table>-->
+        <!--        <table tableName="school_category" domainObjectName="SchoolCategory" enableCountByExample="false"-->
+        <!--               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"-->
+        <!--               selectByExampleQueryId="true">-->
+        <!--        </table>-->
+<!--        <table tableName="t_data_permission_test" domainObjectName="DataPermissionTest" enableCountByExample="false"-->
+<!--               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"-->
+<!--               selectByExampleQueryId="true">-->
+<!--        </table>-->
+        <table tableName="t_role" domainObjectName="Role" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+        </table>
+<!--        <table tableName="t_role" domainObjectName="Role" enableCountByExample="false"-->
+<!--               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"-->
+<!--               selectByExampleQueryId="true">-->
+<!--        </table>-->
+<!--        <table tableName="t_user_data_permission" domainObjectName="UserDataPermission" enableCountByExample="false"-->
+<!--               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"-->
+<!--               selectByExampleQueryId="true">-->
+<!--        </table>-->
+
+
+    </context>
+</generatorConfiguration>

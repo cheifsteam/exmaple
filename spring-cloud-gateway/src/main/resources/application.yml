@@ -18,25 +18,90 @@
 #            - Method=GET`
 ##            - Query=smile
 #            - Query=keep, pu.
-server:
-  port: 8888
+#server:
+#  port: 8888
+#spring:
+#  application:
+#    name: cloud-gateway-eureka
+#  cloud:
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#      routes:
+#        - id: add_request_parameter_route
+#          uri: lb://spring-cloud-producer
+#          filters:
+#            - StripPrefix=2
+#            - AddRequestParameter=foo, bar
+#            - PrefixPath=/name
+#          predicates:
+#            - Method=GET
+#            - Path=/add/**
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8000/eureka/
+#logging:
+#  level:
+#    org.springframework.cloud.gateway: debug
+
+
+#spring:
+#  application:
+#    name: cloud-gateway-eureka
+#  redis:
+#    host: localhost
+#    password:
+#    port: 6379
+#  cloud:
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#      routes:
+#        - id: requestratelimiter_route
+#          uri: lb://spring-cloud-producer
+#          filters:
+#            - name: RequestRateLimiter
+#              args:
+#                redis-rate-limiter.replenishRate: 10
+#                redis-rate-limiter.burstCapacity: 20
+#                key-resolver: "#{@userKeyResolver}"
+#          predicates:
+#            - Method=GET
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8000/eureka/
+#logging:
+#  level:
+#    org.springframework.cloud.gateway: debug
+
 spring:
-  application:
-    name: cloud-gateway-eureka
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
       routes:
-        - id: add_request_parameter_route
+        - id: hystrix_route
           uri: lb://spring-cloud-producer
-          filters:
-            - StripPrefix=2
-            - AddRequestParameter=foo, bar
           predicates:
             - Method=GET
-            - Path=/name/**
+          filters:
+            - name: Retry
+              args:
+                retries: 3
+                statuses: BAD_GATEWAY
+                methods: GET,POST
+                backoff:
+                  firstBackoff: 10ms
+                  maxBackoff: 50ms
+                  factor: 2
+                  basedOnPreviousValue: false
+            - name: CircuitBreaker
+              args:
+                name: myCircuitBreaker
+                fallbackUri: forward:/fallback
+
 eureka:
   client:
     service-url:

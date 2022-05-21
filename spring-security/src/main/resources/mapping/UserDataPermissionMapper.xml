@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springsecurity.mapper.UserDataPermissionMapper">
+  <resultMap id="BaseResultMap" type="com.example.springsecurity.domain.UserDataPermissionKey">
+    <id column="USER_ID" jdbcType="BIGINT" property="userId" />
+    <id column="DEPT_ID" jdbcType="BIGINT" property="deptId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    USER_ID, DEPT_ID
+  </sql>
+  <select id="selectByExample" parameterType="com.example.springsecurity.domain.UserDataPermissionExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from t_user_data_permission
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.example.springsecurity.domain.UserDataPermissionKey">
+    delete from t_user_data_permission
+    where USER_ID = #{userId,jdbcType=BIGINT}
+      and DEPT_ID = #{deptId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.example.springsecurity.domain.UserDataPermissionKey">
+    insert into t_user_data_permission (USER_ID, DEPT_ID)
+    values (#{userId,jdbcType=BIGINT}, #{deptId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.springsecurity.domain.UserDataPermissionKey">
+    insert into t_user_data_permission
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="deptId != null">
+        DEPT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="deptId != null">
+        #{deptId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-cloud-consumer-node1" />
+        <module name="spring-cloud-consumer-node2" />
+        <module name="spring_security" />
+        <module name="springcloudeureka" />
+        <module name="spring-cloud-config" />
+        <module name="spring-cloud-config-client1" />
+        <module name="spring-cloud-sleuth" />
+        <module name="schedulingtasks" />
+        <module name="spring-cloud-producer1" />
+        <module name="spring-cloud-config-clinet" />
+        <module name="spring-cloud-zuul" />
+        <module name="consuming_a_restful_web_service" />
+        <module name="spring-cloud-gateway" />
+        <module name="spring-security" />
+        <module name="spring-cloud-producer" />
+        <module name="dashboard" />
+        <module name="spring-cloud-consumer" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="11">
+      <module name="consuming_a_restful_web_service" target="11" />
+      <module name="dashboard" target="11" />
+      <module name="schedulingtasks" target="11" />
+      <module name="spring-cloud-config" target="11" />
+      <module name="spring-cloud-config-client1" target="11" />
+      <module name="spring-cloud-config-clinet" target="11" />
+      <module name="spring-cloud-consumer" target="11" />
+      <module name="spring-cloud-consumer-node1" target="11" />
+      <module name="spring-cloud-consumer-node2" target="11" />
+      <module name="spring-cloud-gateway" target="11" />
+      <module name="spring-cloud-producer" target="11" />
+      <module name="spring-cloud-producer1" target="11" />
+      <module name="spring-cloud-sleuth" target="11" />
+      <module name="spring-cloud-zuul" target="11" />
+      <module name="spring-security" target="11" />
+      <module name="spring_security" target="15" />
+      <module name="springcloudeureka" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="consuming_a_restful_web_service" options="-parameters" />
+      <module name="dashboard" options="-parameters" />
+      <module name="schedulingtasks" options="-parameters" />
+      <module name="spring-cloud-config" options="-parameters" />
+      <module name="spring-cloud-config-client1" options="-parameters" />
+      <module name="spring-cloud-config-clinet" options="-parameters" />
+      <module name="spring-cloud-consumer" options="-parameters" />
+      <module name="spring-cloud-consumer-node1" options="-parameters" />
+      <module name="spring-cloud-consumer-node2" options="-parameters" />
+      <module name="spring-cloud-gateway" options="-parameters" />
+      <module name="spring-cloud-producer" options="-parameters" />
+      <module name="spring-cloud-producer1" options="-parameters" />
+      <module name="spring-cloud-sleuth" options="-parameters" />
+      <module name="spring-cloud-zuul" options="-parameters" />
+      <module name="spring-security" options="-parameters" />
+      <module name="spring_security" options="-parameters" />
+      <module name="springcloudeureka" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/schedulingtasks/pom.xml" />
+        <option value="$PROJECT_DIR$/consuming_a_restful_web_service/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_security/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloudeureka/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-producer/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-producer1/pom.xml" />
+        <option value="$PROJECT_DIR$/dashboard/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-consumer-node1/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-consumer-node2/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-config/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-config-clinet/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-config-client1/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-zuul/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-security/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-sleuth/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-gateway/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" default="false" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/.idea" />
+  </component>
+</project>

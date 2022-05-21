@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/consuming_a_restful_web_service/consuming_a_restful_web_service.iml" filepath="$PROJECT_DIR$/consuming_a_restful_web_service/consuming_a_restful_web_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dashboard/dashboard.iml" filepath="$PROJECT_DIR$/dashboard/dashboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/examples.iml" filepath="$PROJECT_DIR$/.idea/examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leetcode/leetcode.iml" filepath="$PROJECT_DIR$/leetcode/leetcode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schedulingtasks/schedulingtasks.iml" filepath="$PROJECT_DIR$/schedulingtasks/schedulingtasks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-config/spring-cloud-config.iml" filepath="$PROJECT_DIR$/spring-cloud-config/spring-cloud-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-config-client1/spring-cloud-config-client1.iml" filepath="$PROJECT_DIR$/spring-cloud-config-client1/spring-cloud-config-client1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-config-clinet/spring-cloud-config-clinet.iml" filepath="$PROJECT_DIR$/spring-cloud-config-clinet/spring-cloud-config-clinet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-consumer/spring-cloud-consumer.iml" filepath="$PROJECT_DIR$/spring-cloud-consumer/spring-cloud-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-consumer-node1/spring-cloud-consumer-node1.iml" filepath="$PROJECT_DIR$/spring-cloud-consumer-node1/spring-cloud-consumer-node1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-consumer-node2/spring-cloud-consumer-node2.iml" filepath="$PROJECT_DIR$/spring-cloud-consumer-node2/spring-cloud-consumer-node2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-gateway/spring-cloud-gateway.iml" filepath="$PROJECT_DIR$/spring-cloud-gateway/spring-cloud-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-producer/spring-cloud-producer.iml" filepath="$PROJECT_DIR$/spring-cloud-producer/spring-cloud-producer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-producer1/spring-cloud-producer1.iml" filepath="$PROJECT_DIR$/spring-cloud-producer1/spring-cloud-producer1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-sleuth/spring-cloud-sleuth.iml" filepath="$PROJECT_DIR$/spring-cloud-sleuth/spring-cloud-sleuth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-zuul/spring-cloud-zuul.iml" filepath="$PROJECT_DIR$/spring-cloud-zuul/spring-cloud-zuul.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-security/spring-security.iml" filepath="$PROJECT_DIR$/spring-security/spring-security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_security/spring_security.iml" filepath="$PROJECT_DIR$/spring_security/spring_security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloudeureka/springcloudeureka.iml" filepath="$PROJECT_DIR$/springcloudeureka/springcloudeureka.iml" />
+    </modules>
+  </component>
+</project>

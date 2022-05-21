@@ -24,9 +24,6 @@ public class Solution {
 }
 //牺牲一个存储空间来完成循环队列
 class MyCircularQueue {
-
-
-
     int capacity=0;
     int[] stack;
     int front=0;

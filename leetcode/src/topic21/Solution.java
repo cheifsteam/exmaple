@@ -7,7 +7,7 @@ import java.util.Queue;
 /**
  * @author 屈燃希
  * @version 1.0
- * @project
+ * @project 队列实现栈
  */
 public class Solution {
     public static void main(String[] args) {
@@ -27,41 +27,41 @@ public class Solution {
     }
 }
 class MyStack {
-    Queue<Integer> q1,q2;
-    public MyStack() {
-        q1=new LinkedList<>();
-        q2=new LinkedList<>();
-    }
+   Queue<Integer> queue1;
+   Queue<Integer> queue2; //一个队列同时作为另一个队列临时变量始终为空
+   public  MyStack()
+   {
+        queue1=new LinkedList();
+        queue2=new LinkedList();
+   }
+   public void push(int x)
+   {
+      queue2.offer(x);
+      while (!queue1.isEmpty())
+      {
+          queue2.offer(queue1.poll());
+      }
+      Queue temp=queue2;
+      queue2=queue1;
+      queue1=temp;
+   }
+   public int top()
+   {
+       return (int) queue1.peek();
+   }
+   public int pop(){
+       return (int) queue1.poll();
+   }
+   public boolean empty(){
+       return queue1.isEmpty();
+   }
 
-    public void push(int x) {
-        q2.add(x);
-        while (!q1.isEmpty()){
-            q2.add(q1.poll());
-        }
-        Queue<Integer> temp=q2;
-        q2=q1;
-        q1=temp;
-    }
-
-    public int pop() {
-
-      return   q1.poll();
-    }
-
-    public int top() {
-        return q1.peek();
-    }
-
-    public boolean empty() {
-        return q1.isEmpty();
-    }
-    
 }
 class MyStack1 {
     Queue<Integer> q1;
     public MyStack1() {
         q1=new LinkedList<>();
-       
+
     }
 
     public void push(int x) {
@@ -84,5 +84,5 @@ class MyStack1 {
     public boolean empty() {
         return q1.isEmpty();
     }
-    
+
 }

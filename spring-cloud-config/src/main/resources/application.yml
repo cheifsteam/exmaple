@@ -1,0 +1,25 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/cheifsteam/config-repo/     # 配置git仓库的地址
+          search-paths: config-repo                             # git仓库地址下的相对地址，可以配置多个，用,分割。
+          username: cheifsteam                                        # git仓库的账号
+          password:     QURANxi123       # git仓库的密码
+          default-label: master
+      label: master
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/   # 注册中心eurka地址
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include : "*"

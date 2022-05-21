@@ -8,7 +8,7 @@ package topic27;
  */
 public class BSTreeTest {
 
-    private static final int arr[] = {10,17,15,12,13,16,20};
+    private static final int arr[] = {10,8,6,9,15,13,14,16};
 
     public static void main(String[] args) {
         int i, ilen;
@@ -36,14 +36,17 @@ public class BSTreeTest {
         System.out.println("== 树的详细信息: ");
         tree.print();
 
-        System.out.print("\n== 删除根节点: "+ arr[0]);
-        System.out.println();
-        tree.remove(arr[3]);
-        tree.print();
+//        System.out.print("\n== 删除根节点: "+ arr[0]);
+//        System.out.println();
+//        tree.remove(arr[0]);
+//        tree.print();
 
         System.out.print("\n== 中序遍历: ");
         tree.inOrder();
         System.out.println();
+
+        System.out.println("\n==节点");
+        tree.predecessor(arr[3]);
 
         // 销毁二叉树
         tree.clear();

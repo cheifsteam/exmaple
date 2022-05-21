@@ -15,4 +15,9 @@ public interface EsPersonService  {
         int  importAll();
     Page<EsPerson> search(Integer pageNum,Integer pageSize,String keyword);
     List<EsPerson> searchByMysql(String keyword);
+
+    /**
+     * 复杂搜索
+     */
+//    Page<EsPerson> search( String keyword,Integer pageNum, Integer pageSize, Integer sort);
 }

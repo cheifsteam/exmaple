@@ -1,5 +1,9 @@
 package topic27;
 
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Java 语言: 二叉查找树
  *
@@ -47,6 +51,8 @@ public class BSTree<T extends Comparable<T>> {
             preOrder(tree.right);
         }
     }
+
+
 
     public void preOrder() {
         preOrder(mRoot);
@@ -183,7 +189,6 @@ public class BSTree<T extends Comparable<T>> {
             x = y;
             y = y.parent;
         }
-
         return y;
     }
 
@@ -233,8 +238,8 @@ public class BSTree<T extends Comparable<T>> {
         if (y==null)
             bst.mRoot = z;
         else {
-            cmp = z.key.compareTo(y.key);
-            if (cmp < 0)
+            cmp = z.key.compareTo(y.key);       //判断z在y左节点还是右节点
+           if (cmp < 0)
                 y.left = z;
             else
                 y.right = z;
@@ -263,31 +268,31 @@ public class BSTree<T extends Comparable<T>> {
      *     bst 二叉树
      *     z 删除的结点
      */
-    private BSTNode<T> remove(BSTree<T> bst, BSTNode<T> z) {
+    private BSTNode<T> remove(BSTree<T> bst, BSTNode<T> z)
+    {
         BSTNode<T> x=null;
         BSTNode<T> y=null;
-
-        if ((z.left == null) || (z.right == null) )
+        if ((z.left == null) || (z.right == null) ) //被删除的节点只有左右节点数或者都没有
             y = z;
         else
-            y = successor(z);
-
-        if (y.left != null)
-            x = y.left;
+            y = successor(z);     //左右节点都有，后驱节点顶替
+        //下面全部步骤，如果后驱节点y有孩子左右两个节点的，删除y时的孩子节点要上移
+        if (y.left != null)     //判断后驱节点y的左节点是否空
+            x = y.left;     //不为空，左节点顶替（因为根据二叉查找树的性质，根节点必须要小于右子树的所有节点）
         else
-            x = y.right;
+            x = y.right;    //若为空右节点顶替
 
         if (x != null)
             x.parent = y.parent;
 
-        if (y.parent == null)
+        if (y.parent == null)     //y的父节点为null，y是根节点
             bst.mRoot = x;
-        else if (y == y.parent.left)
+        else if (y == y.parent.left)      //若是y是它的父节点的左节点则节点进行赋值
             y.parent.left = x;
         else
             y.parent.right = x;
 
-        if (y != z)
+        if (y != z)     //删除节点的值交换
             z.key = y.key;
 
         return y;
@@ -306,6 +311,12 @@ public class BSTree<T extends Comparable<T>> {
         if ((z = search(mRoot, key)) != null)
             if ( (node = remove(this, z)) != null)
                 node = null;
+    }
+    public  void predecessor(T key){
+        BSTNode<T> node=null;
+        node=search(mRoot,key);
+        BSTNode<T> predecessor = predecessor(node);
+        System.out.println("前驱节点"+predecessor.key);
     }
 
     /*

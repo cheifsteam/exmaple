@@ -1,0 +1,45 @@
+spring:
+  datasource:
+    dynamic:
+      p6spy: false
+      hikari:
+        connection-timeout: 30000
+        max-lifetime: 1800000
+        max-pool-size: 15
+        min-idle: 5
+        connection-test-query: select 1
+        pool-name: MyHikariCP
+      primary: example
+      datasource:
+        example:
+          username: root
+          password: qwer123+456
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://127.0.0.1:3306/example?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
+        # 数据源-2，名称为 quartz
+        quartz:
+          username: root
+          password: qwer123+456
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://127.0.0.1:3306/quartz?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
+
+server:
+  port: 8000
+mybatis-plus:
+  type-aliases-package: com.example.schedulingtasks.*.entity
+  mapper-locations: classpath:mappper/*/*.xml
+  configuration:
+    jdbc-type-for-null: null
+  global-config:
+    banner: false
+    db-config:
+      select-strategy: not_empty
+
+logging:
+  level:
+    com:
+      baomidou:
+        mybatisplus:
+          core:
+            metadata:
+              TableInfoHelper: error
